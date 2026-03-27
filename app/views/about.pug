@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title About Us
+    link(rel='stylesheet', href='/css/about.css')
+  body
+
+    nav.navbar
+      .nav-logo Logo
+      ul.nav-links
+        li: a(href='/') Home
+        li: a(href='/guides') Guides
+        li: a(href='/videos') Videos
+        li: a(href='/about').active About Us
+      a.nav-login(href='/login') Login
+
+    main.container
+
+      section.about-header
+        h1 About Us
+        .about-box
+          p Welcome to your new digital home base! We're a community-powered forum where strategy meets chaos. Whether you're here to leak your secret pro-tips, host a legendary tournament, or finally find a squad that actually plays the objective, we've got you covered. Level up your game, find your crew, and let's make some pixels fly. Ready to join the lobby?
+
+      section.team
+        h2 Meet The Team
+
+        .team-row
+          .team-member
+            img.avatar(src="/images/placeholder.png")
+            h3 Khrystyna
+            p.role Role
+          .team-member
+            img.avatar(src="/images/placeholder.png")
+            h3 Pakize
+            p.role Role
+
+        .team-row
+          .team-member
+            img.avatar(src="/images/placeholder.png")
+            h3 Renato
+            p.role Role
+          .team-member
+            img.avatar(src="/images/placeholder.png")
+            h3 Yuhang
+            p.role Role
+          .team-member
+            img.avatar(src="/images/placeholder.png")
+            h3 Narcis
+            p.role Role

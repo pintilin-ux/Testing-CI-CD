@@ -1,0 +1,33 @@
+extends layout
+block content
+    h1 Student page for: #{student.name}
+    p The ID for the student is: #{student.id}
+    h2 Programme: #{student.programme.pName} 
+    h2 Modules 
+    table(border=1)
+        for module in student.modules 
+            tr  
+                td #{module.code}
+                td 
+                    a(href='/single-module/' + module.code) #{module.mName}
+
+
+    h2 Add a note about this student
+        form(action='/add-note', method='POST')
+            input(type='hidden' name='id' value=student.id)
+            textarea(name='note' rows=6 cols=50)
+            div 
+            input(type='submit' value='Submit')
+            p Note for this student: #{student.note}
+
+            
+    form(action='/allocate-programme', method='POST')
+        input(type='hidden' name='id' value=student.id)
+        select(name='programme')
+            for programme in programmes
+                if programme.id == student.programme.id
+                    option(value=programme.id selected='selected') #{programme.pName}
+                else
+                    option(value=programme.id) #{programme.pName}
+        <div>
+        input(type='submit' value='Submit')

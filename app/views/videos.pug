@@ -1,0 +1,104 @@
+doctype html
+html
+  head
+    title Videos
+    link(rel='stylesheet', href='/css/videos.css')
+  body
+
+    nav.navbar
+      .nav-logo Logo
+      ul.nav-links
+        li: a(href='/') Home
+        li: a(href='/guides') Guides
+        li: a(href='/videos').active Videos
+        li: a(href='/about') About Us
+      a.nav-login(href='/login') Login
+
+    main.container
+
+      section.game-selection
+        h2 Game Selection
+        select.game-dropdown
+          option Counter Strike
+          option Valorant
+          option Fortnite
+
+      section.featured
+        h3.featured-title Top Videos This week
+        .carousel
+          button.carousel-btn.prev &#8592;
+          .carousel-track
+            .carousel-slide.active
+              .carousel-item
+                iframe(width="220" height="160" src="https://www.youtube.com/embed/yNaW4SEbzGU" frameborder="0" allowfullscreen)
+                p How to smoke...
+              .carousel-item
+                iframe(width="220" height="160" src="https://www.youtube.com/embed/JuzXsaf-QuY" frameborder="0" allowfullscreen)
+                p How to Aim train...
+              .carousel-item
+                iframe(width="220" height="160" src="https://www.youtube.com/embed/j_18b15jalE" frameborder="0" allowfullscreen)
+                p How to molly...
+            .carousel-slide
+              .carousel-item
+                iframe(width="220" height="160" src="https://www.youtube.com/embed/yNaW4SEbzGU" frameborder="0" allowfullscreen)
+                p How to smoke...
+              .carousel-item
+                iframe(width="220" height="160" src="https://www.youtube.com/embed/JuzXsaf-QuY" frameborder="0" allowfullscreen)
+                p How to Aim train...
+              .carousel-item
+                iframe(width="220" height="160" src="https://www.youtube.com/embed/j_18b15jalE" frameborder="0" allowfullscreen)
+                p How to molly...
+            .carousel-slide
+              .carousel-item
+                iframe(width="220" height="160" src="https://www.youtube.com/embed/yNaW4SEbzGU" frameborder="0" allowfullscreen)
+                p How to smoke...
+              .carousel-item
+                iframe(width="220" height="160" src="https://www.youtube.com/embed/JuzXsaf-QuY" frameborder="0" allowfullscreen)
+                p How to Aim train...
+              .carousel-item
+                iframe(width="220" height="160" src="https://www.youtube.com/embed/j_18b15jalE" frameborder="0" allowfullscreen)
+                p How to molly...
+          button.carousel-btn.next &#8594;
+          .carousel-dots
+            span.dot.active
+            span.dot
+            span.dot
+
+      section.video-grid
+        .video-card
+          iframe(width="100%" height="140" src="https://www.youtube.com/embed/F74qK2UBybc" frameborder="0" allowfullscreen)
+          p Video #1
+        .video-card
+          iframe(width="100%" height="140" src="https://www.youtube.com/embed/F74qK2UBybc" frameborder="0" allowfullscreen)
+          p Video #2
+        .video-card
+          iframe(width="100%" height="140" src="https://www.youtube.com/embed/F74qK2UBybc" frameborder="0" allowfullscreen)
+          p Video #3
+        .video-card
+          iframe(width="100%" height="140" src="https://www.youtube.com/embed/F74qK2UBybc" frameborder="0" allowfullscreen)
+          p Video #4
+        .video-card
+          iframe(width="100%" height="140" src="https://www.youtube.com/embed/F74qK2UBybc" frameborder="0" allowfullscreen)
+          p Video #5
+        .video-card
+          iframe(width="100%" height="140" src="https://www.youtube.com/embed/F74qK2UBybc" frameborder="0" allowfullscreen)
+          p Video #6
+
+    script.
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.dot');
+      let current = 0;
+
+      function goToSlide(n) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      document.querySelector('.prev').addEventListener('click', () => goToSlide(current - 1));
+      document.querySelector('.next').addEventListener('click', () => goToSlide(current + 1));
+      dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
+
+      
